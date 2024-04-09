@@ -32,7 +32,12 @@ public class NetworkTransformTest : NetworkBehaviour
 
     [Rpc(SendTo.Server)]
     void  SubmitPositionRequestServerRpc(Vector3 incrementPosition){
-        transform.position += incrementPosition * moveSpeed * Time.fixedDeltaTime;
+        Vector3 newPosition = transform.position + (incrementPosition * moveSpeed * Time.fixedDeltaTime);
+        if(newPosition.x > 5.4 || newPosition.x < -5.4){
+            return;
+        }else{
+            transform.position += incrementPosition * moveSpeed * Time.fixedDeltaTime;
+        }
     }
 
     [Rpc(SendTo.Server)]
