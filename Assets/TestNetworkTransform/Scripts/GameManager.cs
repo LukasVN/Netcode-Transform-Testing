@@ -5,6 +5,23 @@ namespace HelloWorld
 {
     public class GameManager : MonoBehaviour
     {
+
+        public int targetFrameRate = 60;
+
+        void Awake () {
+            #if UNITY_EDITOR
+            QualitySettings.vSyncCount = 0;  // VSync must be disabled
+            Application.targetFrameRate = targetFrameRate;
+            #endif
+        }
+
+        private void Start()
+        {
+            Application.targetFrameRate = targetFrameRate;
+        }
+
+
+
         void OnGUI()
         {
             GUILayout.BeginArea(new Rect(10, 10, 300, 300));
