@@ -33,7 +33,7 @@ public class NetworkTransformTest : NetworkBehaviour
     [Rpc(SendTo.Server)]
     void  SubmitPositionRequestServerRpc(Vector3 incrementPosition){
         Vector3 newPosition = transform.position + (incrementPosition * moveSpeed * Time.fixedDeltaTime);
-        if(newPosition.x > 5.4 || newPosition.x < -5.4){
+        if(newPosition.x > 5f || newPosition.x < -5f || newPosition.z > 5f || newPosition.z < -5f){
             return;
         }else{
             transform.position += incrementPosition * moveSpeed * Time.fixedDeltaTime;

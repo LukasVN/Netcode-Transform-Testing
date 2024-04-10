@@ -307,7 +307,7 @@ MonoBehaviour:
     PlayerPrefab: {fileID: 6230259555144811366, guid: b1878d6932cf94e49b8bed4c7cfe24f2, type: 3}
     Prefabs:
       NetworkPrefabsLists: []
-    TickRate: 30
+    TickRate: 60
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
     ConnectionData: 
@@ -448,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcbea8e74a46bf44b8be28b8a68f53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetFrameRate: 60
 --- !u!4 &789323710
 Transform:
   m_ObjectHideFlags: 0
