@@ -53,7 +53,13 @@ public class NetworkTransformTest : NetworkBehaviour
             Vector3 incrementPosition = new Vector3(moveX,0,moveZ);
             
             if(!IsHost){
-                transform.position += incrementPosition * moveSpeed * Time.fixedDeltaTime;
+                Vector3 newPosition = transform.position + (incrementPosition * moveSpeed * Time.fixedDeltaTime);
+                if(newPosition.x > 5f || newPosition.x < -5f || newPosition.z > 5f || newPosition.z < -5f){
+                    transform.position -= incrementPosition * moveSpeed * Time.fixedDeltaTime;
+                    return;
+                }else{
+                    transform.position += incrementPosition * moveSpeed * Time.fixedDeltaTime;
+                }
             }
 
             SubmitPositionRequestServerRpc(incrementPosition);
