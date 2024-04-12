@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 5595924400644977077}
   - component: {fileID: 401848357925670866}
   - component: {fileID: 7220269313528446534}
-  - component: {fileID: 8826599681559047746}
   - component: {fileID: 2077369409874129235}
-  - component: {fileID: 8878187759693553231}
+  - component: {fileID: -7879804197634802632}
+  - component: {fileID: -5570954006196585820}
   m_Layer: 0
-  m_Name: Player
+  m_Name: ServerAuthPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1559406947
+  GlobalObjectIdHash: 1746666511
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -147,18 +147,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8826599681559047746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6230259555144811366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af357f123a34b342975a2ac1e9e2f05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &2077369409874129235
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -186,7 +174,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &8878187759693553231
+--- !u!114 &-7879804197634802632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,7 +183,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6230259555144811366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10416e5eb3911cf43b8e4b0edc29fdc0, type: 3}
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UseUnreliableDeltas: 0
@@ -217,3 +205,15 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 0
   SlerpPosition: 0
+--- !u!114 &-5570954006196585820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6230259555144811366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b759b3a1a3f6440aea1c9428a5f19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

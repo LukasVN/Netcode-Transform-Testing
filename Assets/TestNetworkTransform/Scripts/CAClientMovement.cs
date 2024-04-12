@@ -2,9 +2,8 @@ using System;
 using Unity.Netcode;
 using UnityEngine;
 
-public class NetworkTransformTest : NetworkBehaviour
+public class CAClientMovement : NetworkBehaviour
 {
-
     private float moveSpeed = 5f;
     private float jumpForce = 5f;
     private Rigidbody rb;
@@ -15,7 +14,6 @@ public class NetworkTransformTest : NetworkBehaviour
         if(IsOwner){
             if(Input.GetKeyDown(KeyCode.Space)){
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                //SubmitJumpingRequestServerRpc();
             }
         }
         
@@ -28,18 +26,6 @@ public class NetworkTransformTest : NetworkBehaviour
         }
 
     }
-
-
-
-    // [Rpc(SendTo.Server)]
-    // void  SubmitPositionRequestServerRpc(Vector3 incrementPosition){
-        
-    // }
-
-    // [Rpc(SendTo.Server)]
-    // void SubmitJumpingRequestServerRpc(){
-    //     rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-    // }
 
     void Move(){
             float moveX = Input.GetAxis("Horizontal");
@@ -55,7 +41,6 @@ public class NetworkTransformTest : NetworkBehaviour
                 transform.position += incrementPosition * moveSpeed * Time.fixedDeltaTime;
             }
 
-            //SubmitPositionRequestServerRpc(incrementPosition);
             
     }
 
