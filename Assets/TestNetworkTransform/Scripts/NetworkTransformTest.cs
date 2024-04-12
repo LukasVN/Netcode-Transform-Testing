@@ -14,7 +14,8 @@ public class NetworkTransformTest : NetworkBehaviour
     private void Update() {
         if(IsOwner){
             if(Input.GetKeyDown(KeyCode.Space)){
-                SubmitJumpingRequestServerRpc();
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                //SubmitJumpingRequestServerRpc();
             }
         }
         
@@ -30,21 +31,15 @@ public class NetworkTransformTest : NetworkBehaviour
 
 
 
-    [Rpc(SendTo.Server)]
-    void  SubmitPositionRequestServerRpc(Vector3 incrementPosition){
-        Vector3 newPosition = transform.position + (incrementPosition * moveSpeed * Time.fixedDeltaTime);
-        if(newPosition.x > 5f || newPosition.x < -5f || newPosition.z > 5f || newPosition.z < -5f){
-            transform.position -= incrementPosition * moveSpeed * Time.fixedDeltaTime;
-            return;
-        }else{
-            transform.position += incrementPosition * moveSpeed * Time.fixedDeltaTime;
-        }
-    }
+    // [Rpc(SendTo.Server)]
+    // void  SubmitPositionRequestServerRpc(Vector3 incrementPosition){
+        
+    // }
 
-    [Rpc(SendTo.Server)]
-    void SubmitJumpingRequestServerRpc(){
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-    }
+    // [Rpc(SendTo.Server)]
+    // void SubmitJumpingRequestServerRpc(){
+    //     rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    // }
 
     void Move(){
             float moveX = Input.GetAxis("Horizontal");
@@ -52,17 +47,15 @@ public class NetworkTransformTest : NetworkBehaviour
             
             Vector3 incrementPosition = new Vector3(moveX,0,moveZ);
             
-            if(!IsHost){
-                Vector3 newPosition = transform.position + (incrementPosition * moveSpeed * Time.fixedDeltaTime);
-                if(newPosition.x > 5f || newPosition.x < -5f || newPosition.z > 5f || newPosition.z < -5f){
-                    transform.position -= incrementPosition * moveSpeed * Time.fixedDeltaTime;
-                    return;
-                }else{
-                    transform.position += incrementPosition * moveSpeed * Time.fixedDeltaTime;
-                }
+            Vector3 newPosition = transform.position + (incrementPosition * moveSpeed * Time.fixedDeltaTime);
+            if(newPosition.x > 5f || newPosition.x < -5f || newPosition.z > 5f || newPosition.z < -5f){
+                transform.position -= incrementPosition * moveSpeed * Time.fixedDeltaTime;
+                return;
+            }else{
+                transform.position += incrementPosition * moveSpeed * Time.fixedDeltaTime;
             }
 
-            SubmitPositionRequestServerRpc(incrementPosition);
+            //SubmitPositionRequestServerRpc(incrementPosition);
             
     }
 
