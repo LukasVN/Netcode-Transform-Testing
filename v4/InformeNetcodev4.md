@@ -1,4 +1,4 @@
-# **Informe Netcode**
+# **Informe Netcode for GameObjects 1.8.1**
 
 ## **Netcode Authorities**
 
@@ -23,5 +23,15 @@ La interpolación es un tema bastante delicado según las pruebas que he realiza
 
 Pero realmente al desactivarla (*En Netcode for GameObjects al menos*) el movimiento del cliente se siente muchisimo más fluido y natural eliminando una enorme cantidad de delay.
 
+***Mejor configuración encontrada del network transform para mayor fluidez en el cliente:***
 
 ![Alt](image.png)
+
+____
+
+## **Pruebas de latencia**
+Utilizando el Network Simulator realicé algunas pruebas para comprobar el comportamiento del cliente en diferentes situaciones y llegué a las siguientes conclusiones:
+- Al testear diferentes *Conection Presets* el jugador se teletransporta al moverse y tiene mayor delay si la calidad de conexión es mala.
+- Y al generar *Lag spikes* el jugador se congelaba por un instante y luego se teletransportaba a la posición que había marcado en el movento del *Lag spike*.
+
+![Alt text](image-1.png)
