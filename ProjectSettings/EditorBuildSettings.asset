@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TestNetworkTransform/Scenes/TestNetworkTransformScene.unity
-    guid: 50079ac836cdb4e409708876fa34f1be
+    path: Assets/TestNetworkTransform/Scenes/ServerAuthorityRewindScene.unity
+    guid: c230e5b4ba856bf4091d3c90aa2f9544
   m_configObjects: {}

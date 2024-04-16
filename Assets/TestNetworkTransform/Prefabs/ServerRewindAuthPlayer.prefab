@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 401848357925670866}
   - component: {fileID: 7220269313528446534}
   - component: {fileID: 2077369409874129235}
+  - component: {fileID: 4347008821646368860}
   - component: {fileID: -2450585020436520856}
-  - component: {fileID: 2785045236991761606}
   m_Layer: 0
   m_Name: ServerRewindAuthPlayer
   m_TagString: Untagged
@@ -174,7 +174,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-2450585020436520856
+--- !u!114 &4347008821646368860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,19 +183,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6230259555144811366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e812b636d945aa4189d4924b3d1cbae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2785045236991761606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6230259555144811366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: a6482e13ab2c5ab46b12a67db5750bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UseUnreliableDeltas: 0
@@ -217,3 +205,16 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 0
   SlerpPosition: 0
+  isServerAuthoritative: 0
+--- !u!114 &-2450585020436520856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6230259555144811366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e812b636d945aa4189d4924b3d1cbae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

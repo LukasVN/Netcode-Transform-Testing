@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class ClientAuthorityTransform : NetworkTransform
 {
-    protected override bool OnIsServerAuthoritative()
-        {
+    protected override bool OnIsServerAuthoritative(){
             return false;
     }
     
